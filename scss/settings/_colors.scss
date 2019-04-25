@@ -97,12 +97,8 @@ $fd-colors-background-states: map-merge((
   "information": map-get($fd-colors-background, 6),
 ), $fd-colors-background-states);
 
-
-
-
-
 //! ------ MIGRATE TO GLOBAL CSS VARS vvvvvvvvvvvvv ------
-  : map-get($fd-colors-status, 3) !default;
+$fd-color--negative: map-get($fd-colors-status, 3) !default;
 $fd-color--error: $fd-color--negative !default;
 $fd-color--alert: map-get($fd-colors-status, 2) !default;
 $fd-color--warning: $fd-color--alert !default;
@@ -124,7 +120,6 @@ $fd-background-color--sidebar: map-get($fd-colors-background, 2) !default;
 $fd-background-color--footer: map-get($fd-colors-background, 2) !default;
 
 $fd-shell-header-background-color: map-get($fd-colors-shell, 1) !default;
-
 
 $fd-forms-color: $fd-color !default;
 $fd-forms-color--placeholder: adjust-color(map-get($fd-colors-text, 3), $lightness: 14) !default;

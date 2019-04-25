@@ -265,8 +265,6 @@ $sapContent_LabelColor: $sapPrimary7;
 $sapContent_DisabledOpacity: 0.4;
 $sapContent_DisabledTextColor: fade($sapTextColor, (100 - ($sapContent_DisabledOpacity * 100)));
 
-
-
 // [Tags "!Protected"]
 $sapContent_ForegroundColor: darken($sapBaseColor, 6);
 
@@ -286,7 +284,7 @@ $sapShell_Background: $sapPrimary4;
 $sapShell_BackgroundImage: none;
 
 // [Tags "!Protected"]
-$sapShell_BackgroundImageOpacity: 1.0;
+$sapShell_BackgroundImageOpacity: 1;
 
 // [Tags "!Protected"]
 $sapShell_BackgroundImageRepeat: false;
