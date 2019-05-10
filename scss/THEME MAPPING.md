@@ -7,6 +7,7 @@
 ### Proposal
 
 
+
 Consuming base params from theme designer or NPM package works well but some changes will be required ...
 - Distribute SASS version of the LESS params, change `@` to `$`
 - Order of SASS variables matter, must be defined before being referenced
@@ -17,16 +18,33 @@ Consuming base params from theme designer or NPM package works well but some cha
 	- 23 `contrast()` values (SASS does not support this function)
 	- 1 `fade()` value
 
-Fundamentals settings can be further separated by colors, grid, etc. These are themeable values that could be swapped/augmented with additional values to effect global interface changes.
-A `settings` directory will include:
-	- `colors`
-	- `type`
-	- `fonts`
-	- `spacing`
-	- `images` ?
-	- ``
+Fundamentals settings can be further separated by colors, grid, etc. These are themeable values that could be swapped/augmented with additional values to effect global interface changes. A `settings` directory may include:
+- `colors`
+- `type`
+- `fonts`
+- `spacing`
+- `images` ?
+- `motion` ?
+
 The `root` file with the CSS custom properties shall be expanded to include all global and component variables
-> ? Should the
+> ? | Should the component vars be part of the component files and assembled by `root.scss`
+
+
+### Migration
+
+**Step 1**
+Map SASS params to quickly get a dark theme distributed and begin gathering feedback from applications consuming the full compiled library
+
+Requires very few updates to the existing build process
+
+**Step 2**
+Update the library toolkit to Migrate global and components variables
+
+
+
+
+
+
 
 
 -----
@@ -82,9 +100,12 @@ https://wiki.wdf.sap.corp/wiki/pages/viewpage.action?pageId=2017196009
 | `#925ace` | accent-9 | `sapAccentColor9` |  | ✅ |
 | `#647987` | accent-10 |`sapAccentColor10` | | ✅ |
 | `#D17F15` | accent-11 |  |  | ❗️ **No matching Fiori 3 param** |
-| `#D04343` | accent-12 |  |  |  ❗️ **No matching Fiori 3 param** |
+| `#D04343` | accent-12 |  |  | ❗️ **No matching Fiori 3 param** |
 | `#2B78C5` | accent-13 |  |  | ❗️ **No matching Fiori 3 param** |
 | `#0F828F` | accent-14 |  |  | ❗️ **No matching Fiori 3 param** |
 | `#647887` | accent-15 |  |  | ❗️ **No matching Fiori 3 param** |
 
 ### Notes
+
+--sapPrimary1: #354a5f;
+--sapShellColor: var(--sapPrimary1);

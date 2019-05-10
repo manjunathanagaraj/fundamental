@@ -9,7 +9,7 @@ $fd-colors: () !default;
 $fd-colors: map-merge((
   "shell": (
     1: $sapPrimary1,
-    2: $sapShell_TextColor
+    2: hsl(210, 100%, 91%), //$sapShell_TextColor
   ),
   "action": (
     1: $sapPrimary2,
@@ -116,6 +116,7 @@ $fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
 //baseline
 $fd-color: map-get($fd-colors-text, 1) !default;
 $fd-background-color: map-get($fd-colors-background, 1) !default;
+$fd-background-color--header: map-get($fd-colors-background, 2) !default;
 $fd-background-color--sidebar: map-get($fd-colors-background, 2) !default;
 $fd-background-color--footer: map-get($fd-colors-background, 2) !default;
 
@@ -135,3 +136,50 @@ $fd-forms-border-color: map-get($fd-colors-neutral, 4) !default;
 $fd-forms-border-color--check: map-get($fd-colors-action, 1) !default;
 $fd-forms-border-color--focus: map-get($fd-colors-action, 1) !default;
 $fd-forms-border-color--disabled: map-get($fd-colors-neutral, 2) !default;
+
+
+$fd-color: () !default;
+$fd-color: map-merge((
+  "shell-1": #354a5f,      //sapPrimary1
+  "shell-2": #d1e8ff,      //
+  "action-1": #0a6ed1,     //sapPrimary2
+  "action-2": #fff,        //
+  "background-1": #fff,    //sapPrimary3
+  "background-2": #edeff0, //sapPrimary4
+  "border-1": #89919a,     //sapPrimary5
+  "text-1": #32363a,       //sapPrimary6
+  "text-2": #edeff0,       //sapPrimary7
+  "text-3": #fff,           //
+), $fd-color);
+
+
+// sapNegativeColor
+// #bb0000
+//
+// sapCriticalColor
+// #e9730c
+//
+// sapPositiveColor
+// #107e3e
+//
+// sapInformativeColor
+// #0a6ed1
+//
+// sapNeutralColor
+// #6a6d70
+//
+//
+// sapPrimary1
+// Shell header
+// sapPrimary2		Branded elements and base color for derived interaction states
+// sapPrimary3
+// #fff
+// Light base for containers and derived controls
+//
+// sapPrimary4	#edeff0	Shell background
+//
+// sapPrimary5	#89919a	Borders and derived controls
+//
+// sapPrimary6	#32363a	Base color for texts and titles
+//
+// sapPrimary7	#6a6d70	Base color for labels, non-interactive icons and sub-titles
