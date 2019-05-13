@@ -19,7 +19,7 @@ company_name: SAP Fiori Fundamentals
 google_analytics: UA-126805333-1
 
 # the preview server used. Leave as is.
-host: 127.0.0.1
+host: localhost
 
 # the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
 port: 4000

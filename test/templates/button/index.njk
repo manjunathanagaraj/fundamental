@@ -2,7 +2,7 @@
 {% from "./../format.njk" import format %}
 {% from "./component.njk" import button %}
 {% from "./component-anchor.njk" import anchor_button %}
-{% set css_deps = ['fonts','helpers','icons'] %}
+{# {% set css_deps = ['fonts','helpers','icons'] %} #}
 
 {% macro btncode(content="",bgcolor="transparent") %}
 <div style="background-color:{{bgcolor}}">
@@ -29,6 +29,10 @@
 {% set types = ["", "standard", "positive ", "medium", "negative" ] %}
 {% set sizes = ["", "compact" ] %}
 
+
+<button class="fd-button--emphasized">Emphasized Button</button>
+<button class="fd-button">Regular Button</button>
+<button class="fd-button--light">Light Button</button>
 
 <table border="1" cellpadding="10">
   <tr>
