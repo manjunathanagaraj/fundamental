@@ -636,27 +636,38 @@ a.#{$block} {
     }
 
     // Experimenting with a cleaner solution for applying the high-contrast-white theme
-    // $fd-accessibility-theme: 'default' !default;
-    // @if $fd-accessibility-theme == 'hcw' {
-    //     @include fd-var-color("color", fd-color("action", 2));
-    //     @include fd-var-color("background-color", fd-color("action", 1));
-    //     @include fd-var-color("border-color", fd-color("action", 2));
-    //     @include fd-hover() {
-    //         @include fd-var-color("background-color", fd-color("action", 3));
-    //     }
-    //     &--emphasized,
-    //     &--light,
-    //     &--standard,
-    //     &--positive,
-    //     &--medium,
-    //     &--negative {
-    //         @include fd-var-color("color", fd-color("action", 2));
-    //         @include fd-var-color("background-color", fd-color("action", 1));
-    //         @include fd-var-color("border-color", fd-color("action", 2));
-    //         @include fd-hover() {
-    //             @include fd-var-color("background-color", fd-color("action", 3));
-    //         }
-    //     }
-    // }
+    $fd-accessibility-theme: 'default' !default;
+
+    @if $fd-accessibility-theme == 'hcw' {
+        @include fd-var-color("color", fd-color("action", 2));
+        @include fd-var-color("background-color", fd-color("action", 1));
+        @include fd-var-color("border-color", fd-color("action", 2));
+        @include fd-hover() {
+            @include fd-var-color("background-color", fd-color("action", 3));
+        }
+        &--emphasized,
+        &--light,
+        &--standard,
+        &--positive,
+        &--medium,
+        &--negative,
+        &--compact {
+            @include fd-var-color("color", fd-color("action", 2));
+            @include fd-var-color("background-color", fd-color("action", 1));
+            @include fd-var-color("border-color", fd-color("action", 2));
+            @include fd-hover() {
+                @include fd-var-color("background-color", fd-color("action", 3));
+            }
+            &.#{$block}--positive,
+            &.#{$block}--negative {
+                @include fd-var-color("color", fd-color("action", 2));
+                @include fd-var-color("background-color", fd-color("action", 1));
+                @include fd-var-color("border-color", fd-color("action", 2));
+                @include fd-hover() {
+                    @include fd-var-color("background-color", fd-color("action", 3));
+                }
+            }
+        }
+    }
 }
 /* stylelint-enable */
