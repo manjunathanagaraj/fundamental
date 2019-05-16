@@ -6,27 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ id }}</title>
     <link rel="stylesheet" href="static/layout.css">
-    <style>
-        {% if not selfContained %}
-            {% set core_sass = 'all-ie11.scss' %}
-            {{ core_sass | sass_to_css }}
-
-            {% for sass in css_deps %}
-                {% set dep_sass = sass + '.scss' %}
-                {{ dep_sass | sass_to_css }}
-            {% endfor %}
-        {% endif %}
-        {% if id === 'icon' %}
-            {% set component_sass = 'icons.scss' %}
-        {% elif id === 'radio' or id === 'checkbox' or id === 'input' %}
-            {% set component_sass = 'components/form.scss' %}
-        {% elif id === 'panel' or id === 'panel-grid' or id === 'layout' %}
-            {% set component_sass = 'layout.scss' %}
-        {% else %}
-            {% set component_sass = 'components/' + id + '.scss'  %}
-        {% endif %}
-        {{ component_sass | sass_to_css }}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/fiori-fundamentals@1.5.7/dist/fiori-fundamentals-ie11.css">
 </head>
 
 <body>
