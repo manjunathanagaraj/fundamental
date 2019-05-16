@@ -22,7 +22,7 @@ a.#{$block} {
       $fd-button-color: fd-color("action", 1);
       $fd-button-border-color: fd-color("action", 1);
       $fd-button-background-color: fd-color("background", 2);
-      --fd-button-color: var(--fd-color-action-1);
+      --fd-button-color: var(--fd-color-action-2);
       --fd-button-border-color: var(--fd-color-action-1);
       --fd-button-background-color: var(--fd-color-background-2);
       @include fd-button-reset();
@@ -42,7 +42,8 @@ a.#{$block} {
       border-style: solid;
       border-width: 1px;
       @include fd-var-color("color", $fd-button-color, --fd-button-color);
-      @include fd-var-color("border-color", $fd-button-color, --fd-button-border-color);
+      // @include fd-var-color("border-color", $fd-button-color, --fd-button-border-color);
+      @include fd-var-color("border-color", fd-color("action", 2));
       @include fd-var-color("background-color", $fd-button-background-color, --fd-button-background-color);
 
       //animation
@@ -144,7 +145,7 @@ a.#{$block} {
     --fd-button-border-color: var(--fd-color-action-1);
     --fd-button-background-color: var(--fd-color-action-1);
     @include fd-var-color("color", fd-color("action", 2));
-    @include fd-var-color("border-color", fd-color("action", 1));
+    @include fd-var-color("border-color", fd-color("action", 2));
     @include fd-var-color("background-color", fd-color("action", 1));
 
     @include fd-hover() {
@@ -165,7 +166,10 @@ a.#{$block} {
     &.#{$block}--medium {
       --fd-button-color: var(--fd-color-action-2);
       @include fd-var-color("color", fd-color("action", 2));
+      @include fd-var-color("border-color", fd-color("action", 2));
+      @include fd-var-color("background-color", fd-color("action", 1));
       @include fd-hover() {
+        @include fd-var-color("background-color", fd-color("action", 3));
         @include fd-disabled() {
           --fd-button-color: var(--fd-color-action-2);
           @include fd-var-color("color", fd-color("action", 2));
@@ -177,6 +181,7 @@ a.#{$block} {
       --fd-button-background-color: var(--fd-color-status-4);
       @include fd-var-color("border-color", fd-color("status", 4));
       @include fd-var-color("background-color", fd-color("status", 4));
+      @include fd-var-color("color", fd-color("action", 2));
       @include fd-hover() {
         @include fd-disabled() {
           --fd-button-background-color: var(--fd-color-status-4);
@@ -188,7 +193,7 @@ a.#{$block} {
       --fd-button-border-color: var(--fd-color-status-3);
       --fd-button-background-color: var(--fd-color-status-3);
       @include fd-var-color("border-color", fd-color("status", 3));
-      @include fd-var-color("background-color", fd-color("status", 3));
+      @include fd-var-color("background-color", fd-color("action", 1));
       @include fd-hover() {
         @include fd-disabled() {
           --fd-button-background-color: var(--fd-color-status-3);
@@ -212,7 +217,7 @@ a.#{$block} {
       --fd-button-border-color: var(--fd-color-status-1);
       --fd-button-background-color: var(--fd-color-status-1);
       @include fd-var-color("border-color", fd-color("status", 1));
-      @include fd-var-color("background-color", fd-color("status", 1));
+      @include fd-var-color("background-color", fd-color("action", 1));
       @include fd-hover() {
         @include fd-disabled() {
           --fd-button-background-color: var(--fd-color-status-1);
@@ -225,12 +230,13 @@ a.#{$block} {
   &--light {
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent;
-    @include fd-var-color("border-color", transparent);
+    // @include fd-var-color("border-color", transparent);
+    @include fd-var-color("border-color", fd-color("action", 2)); // added this line
     @include fd-var-color("background-color", transparent);
     @include fd-hover() {
       --fd-button-background-color: var(--fd-color-neutral-1);
       --fd-button-color: var(--fd-color-action-1);
-      @include fd-var-color("color", fd-color("action", 1));
+      @include fd-var-color("color", fd-color("action", 2));
       @include fd-var-color("background-color", fd-color("neutral", 1));
       @include fd-disabled() {
         --fd-button-background-color: transparent;
@@ -344,14 +350,14 @@ a.#{$block} {
   &--standard {
     --fd-button-color: var(--fd-color-status-4);
     --fd-button-border-color: var(--fd-color-status-4);
-    @include fd-var-color("color", fd-color("status", 4));
-    @include fd-var-color("border-color", fd-color("status", 4));
+    @include fd-var-color("color", fd-color("action", 2));
+    @include fd-var-color("border-color", fd-color("action", 2));
     @include fd-focus(--fd-color-status-4, fd-color("status", 4));
     @include fd-hover() {
       --fd-button-color: var(--fd-color-action-2);
       --fd-button-background-color: var(--fd-color-status-4);
       @include fd-var-color("color", fd-color("action", 2));
-      @include fd-var-color("background-color", fd-color("status", 4));
+      @include fd-var-color("background-color", fd-color("action", 3));
       @include fd-disabled() {
         --fd-button-color: var(--fd-color-status-4);
         @include fd-var-color("color", fd-color("status",4));
@@ -371,7 +377,7 @@ a.#{$block} {
     @include fd-focus(--fd-color-status-1, fd-color("status", 1));
     @include fd-hover() {
       --fd-button-background-color: var(--fd-color-status-1);
-      @include fd-var-color("background-color", fd-color("status", 1));
+      @include fd-var-color("background-color", fd-color("action", 3));
       @include fd-disabled() {
         --fd-button-color: var(--fd-color-status-1);
         @include fd-var-color("color", fd-color("status",1));
@@ -390,7 +396,7 @@ a.#{$block} {
     @include fd-focus(--fd-color-status-2, fd-color("status", 2));
     @include fd-hover() {
       --fd-button-background-color: var(--fd-color-status-2);
-      @include fd-var-color("background-color", fd-color("status", 2));
+      @include fd-var-color("background-color", fd-color("action", 3));
       @include fd-disabled() {
         --fd-button-color: var(--fd-color-status-2);
         @include fd-var-color("color", fd-color("status",2));
@@ -409,7 +415,7 @@ a.#{$block} {
     @include fd-focus(--fd-color-status-3, fd-color("status", 3));
     @include fd-hover() {
       --fd-button-background-color: var(--fd-color-status-3);
-      @include fd-var-color("background-color", fd-color("status", 3));
+      @include fd-var-color("background-color", fd-color("action", 3));
       @include fd-disabled() {
         --fd-button-color: var(--fd-color-status-3);
         @include fd-var-color("color", fd-color("status",3));
@@ -628,5 +634,29 @@ a.#{$block} {
         }
       }
     }
+
+    // Experimenting with a cleaner solution for applying the high-contrast-white theme
+    // $fd-accessibility-theme: 'default' !default;
+    // @if $fd-accessibility-theme == 'hcw' {
+    //     @include fd-var-color("color", fd-color("action", 2));
+    //     @include fd-var-color("background-color", fd-color("action", 1));
+    //     @include fd-var-color("border-color", fd-color("action", 2));
+    //     @include fd-hover() {
+    //         @include fd-var-color("background-color", fd-color("action", 3));
+    //     }
+    //     &--emphasized,
+    //     &--light,
+    //     &--standard,
+    //     &--positive,
+    //     &--medium,
+    //     &--negative {
+    //         @include fd-var-color("color", fd-color("action", 2));
+    //         @include fd-var-color("background-color", fd-color("action", 1));
+    //         @include fd-var-color("border-color", fd-color("action", 2));
+    //         @include fd-hover() {
+    //             @include fd-var-color("background-color", fd-color("action", 3));
+    //         }
+    //     }
+    // }
 }
 /* stylelint-enable */
